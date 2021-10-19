@@ -30,12 +30,15 @@ namespace E_Menu_PC_Server.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Form_Elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Form_Drag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Background_Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.MoneySign_Label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PriceUnity_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Cuantity_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ItenName_Combo = new System.Windows.Forms.ComboBox();
@@ -53,9 +56,6 @@ namespace E_Menu_PC_Server.Forms
             this.Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.ClientName_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NoOrder_Label = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.PriceUnity_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.MoneySign_Label = new System.Windows.Forms.Label();
             this.Background_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +96,63 @@ namespace E_Menu_PC_Server.Forms
             this.Background_Panel.ShadowDecoration.Parent = this.Background_Panel;
             this.Background_Panel.Size = new System.Drawing.Size(713, 525);
             this.Background_Panel.TabIndex = 0;
+            // 
+            // MoneySign_Label
+            // 
+            this.MoneySign_Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MoneySign_Label.Enabled = false;
+            this.MoneySign_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoneySign_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MoneySign_Label.Location = new System.Drawing.Point(400, 122);
+            this.MoneySign_Label.Name = "MoneySign_Label";
+            this.MoneySign_Label.Size = new System.Drawing.Size(11, 19);
+            this.MoneySign_Label.TabIndex = 16;
+            this.MoneySign_Label.Text = "$";
+            this.MoneySign_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Enabled = false;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(398, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 18);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Precio (U)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PriceUnity_Textbox
+            // 
+            this.PriceUnity_Textbox.Animated = true;
+            this.PriceUnity_Textbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PriceUnity_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PriceUnity_Textbox.DefaultText = "100";
+            this.PriceUnity_Textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.PriceUnity_Textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.PriceUnity_Textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PriceUnity_Textbox.DisabledState.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PriceUnity_Textbox.Enabled = false;
+            this.PriceUnity_Textbox.FillColor = System.Drawing.SystemColors.Control;
+            this.PriceUnity_Textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PriceUnity_Textbox.FocusedState.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceUnity_Textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PriceUnity_Textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PriceUnity_Textbox.HoverState.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.Location = new System.Drawing.Point(401, 116);
+            this.PriceUnity_Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PriceUnity_Textbox.Name = "PriceUnity_Textbox";
+            this.PriceUnity_Textbox.PasswordChar = '\0';
+            this.PriceUnity_Textbox.PlaceholderText = "Precio unidad";
+            this.PriceUnity_Textbox.SelectedText = "";
+            this.PriceUnity_Textbox.SelectionStart = 3;
+            this.PriceUnity_Textbox.ShadowDecoration.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.Size = new System.Drawing.Size(86, 34);
+            this.PriceUnity_Textbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.PriceUnity_Textbox.TabIndex = 14;
             // 
             // label2
             // 
@@ -168,21 +225,21 @@ namespace E_Menu_PC_Server.Forms
             // 
             this.DGV.AllowUserToAddRows = false;
             this.DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV.BackgroundColor = System.Drawing.Color.White;
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemID,
             this.ItemName,
@@ -190,14 +247,14 @@ namespace E_Menu_PC_Server.Forms
             this.ItemPriceUnity,
             this.ItemPriceTotal,
             this.EliminarProduto});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGV.EnableHeadersVisualStyles = false;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.DGV.Location = new System.Drawing.Point(3, 156);
@@ -232,6 +289,7 @@ namespace E_Menu_PC_Server.Forms
             this.DGV.ThemeStyle.RowsStyle.Height = 22;
             this.DGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
             this.DGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
             this.DGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.EventoAnadido);
             this.DGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.EventoEliminar);
             // 
@@ -396,62 +454,6 @@ namespace E_Menu_PC_Server.Forms
             this.NoOrder_Label.TabIndex = 5;
             this.NoOrder_Label.Text = "Orden #99";
             this.NoOrder_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.Enabled = false;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(398, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 18);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Precio (U)";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PriceUnity_Textbox
-            // 
-            this.PriceUnity_Textbox.Animated = true;
-            this.PriceUnity_Textbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PriceUnity_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PriceUnity_Textbox.DefaultText = "100";
-            this.PriceUnity_Textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PriceUnity_Textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PriceUnity_Textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PriceUnity_Textbox.DisabledState.Parent = this.PriceUnity_Textbox;
-            this.PriceUnity_Textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PriceUnity_Textbox.Enabled = false;
-            this.PriceUnity_Textbox.FillColor = System.Drawing.SystemColors.Control;
-            this.PriceUnity_Textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PriceUnity_Textbox.FocusedState.Parent = this.PriceUnity_Textbox;
-            this.PriceUnity_Textbox.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceUnity_Textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PriceUnity_Textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PriceUnity_Textbox.HoverState.Parent = this.PriceUnity_Textbox;
-            this.PriceUnity_Textbox.Location = new System.Drawing.Point(401, 116);
-            this.PriceUnity_Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PriceUnity_Textbox.Name = "PriceUnity_Textbox";
-            this.PriceUnity_Textbox.PasswordChar = '\0';
-            this.PriceUnity_Textbox.PlaceholderText = "Precio unidad";
-            this.PriceUnity_Textbox.SelectedText = "";
-            this.PriceUnity_Textbox.ShadowDecoration.Parent = this.PriceUnity_Textbox;
-            this.PriceUnity_Textbox.Size = new System.Drawing.Size(86, 34);
-            this.PriceUnity_Textbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.PriceUnity_Textbox.TabIndex = 14;
-            // 
-            // MoneySign_Label
-            // 
-            this.MoneySign_Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MoneySign_Label.Enabled = false;
-            this.MoneySign_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoneySign_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.MoneySign_Label.Location = new System.Drawing.Point(400, 122);
-            this.MoneySign_Label.Name = "MoneySign_Label";
-            this.MoneySign_Label.Size = new System.Drawing.Size(11, 19);
-            this.MoneySign_Label.TabIndex = 16;
-            this.MoneySign_Label.Text = "$";
-            this.MoneySign_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewOrder
             // 

@@ -134,5 +134,14 @@ namespace E_Menu_PC_Server.Forms
         /// </summary>
         private void NewOrder_Load(object sender, EventArgs e)
         { NoOrder_Label.Text = "Orden #" + (NOORDER + 1); }
+
+        private void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 5)
+                return;
+
+            DGV.Rows.Remove(DGV.Rows[e.RowIndex]);
+            ListaArticulos.Remove(ListaArticulos[e.RowIndex]);
+        }
     }
 }

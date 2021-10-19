@@ -34,7 +34,7 @@ namespace E_Menu_PC_Server
             #region Datos estáticos.
             if (GeneralScript.STATICDATA)
             {
-                for (int i = 1; i < 10; i++)
+                for (int i = 1; i < RNG.Next(6, 20); i++)
                 {
                     DataGridViewRow row = new DataGridViewRow();
 
@@ -63,6 +63,9 @@ namespace E_Menu_PC_Server
         {
             try
             {
+                if (e.ColumnIndex != 2)
+                    return;
+
                 currentNoOrderToDelete = int.Parse(DGV.Rows[e.RowIndex].Cells[0].Value.ToString());
                 currentClientName = DGV.Rows[e.RowIndex].Cells[1].Value.ToString();
 

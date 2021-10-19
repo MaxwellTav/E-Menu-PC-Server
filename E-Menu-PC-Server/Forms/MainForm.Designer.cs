@@ -35,17 +35,17 @@ namespace E_Menu_PC_Server
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.DGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GoToOrder = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Background_Panel = new System.Windows.Forms.Panel();
             this.NoOrder_Label = new System.Windows.Forms.Label();
             this.NewOrder_Button = new Guna.UI2.WinForms.Guna2Button();
             this.Exit_Button = new Guna.UI2.WinForms.Guna2Button();
             this.FormDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.VoidUpdate = new System.Windows.Forms.Timer(this.components);
+            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GoToOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.Background_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormElipse
@@ -130,36 +130,16 @@ namespace E_Menu_PC_Server
             this.DGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DGV_RowsAdded);
             this.DGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DGV_RowsRemoved);
             // 
-            // ItemID
+            // Background_Panel
             // 
-            this.ItemID.HeaderText = "No. Orden";
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
-            // 
-            // ClientName
-            // 
-            this.ClientName.HeaderText = "Nombre del cliente";
-            this.ClientName.Name = "ClientName";
-            this.ClientName.ReadOnly = true;
-            // 
-            // GoToOrder
-            // 
-            this.GoToOrder.HeaderText = "Ver la orden";
-            this.GoToOrder.Name = "GoToOrder";
-            this.GoToOrder.ReadOnly = true;
-            this.GoToOrder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GoToOrder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.NoOrder_Label);
-            this.panel1.Controls.Add(this.NewOrder_Button);
-            this.panel1.Controls.Add(this.Exit_Button);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 61);
-            this.panel1.TabIndex = 1;
+            this.Background_Panel.Controls.Add(this.NoOrder_Label);
+            this.Background_Panel.Controls.Add(this.NewOrder_Button);
+            this.Background_Panel.Controls.Add(this.Exit_Button);
+            this.Background_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Background_Panel.Location = new System.Drawing.Point(0, 0);
+            this.Background_Panel.Name = "Background_Panel";
+            this.Background_Panel.Size = new System.Drawing.Size(800, 61);
+            this.Background_Panel.TabIndex = 1;
             // 
             // NoOrder_Label
             // 
@@ -218,11 +198,37 @@ namespace E_Menu_PC_Server
             // 
             // FormDrag
             // 
-            this.FormDrag.TargetControl = this.panel1;
+            this.FormDrag.TargetControl = this.Background_Panel;
             // 
             // VoidUpdate
             // 
             this.VoidUpdate.Interval = 10000;
+            // 
+            // ItemID
+            // 
+            this.ItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemID.FillWeight = 500F;
+            this.ItemID.HeaderText = "No. Orden";
+            this.ItemID.Name = "ItemID";
+            this.ItemID.ReadOnly = true;
+            // 
+            // ClientName
+            // 
+            this.ClientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClientName.FillWeight = 500F;
+            this.ClientName.HeaderText = "Nombre del cliente";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // GoToOrder
+            // 
+            this.GoToOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GoToOrder.FillWeight = 500F;
+            this.GoToOrder.HeaderText = "Ver la orden";
+            this.GoToOrder.Name = "GoToOrder";
+            this.GoToOrder.ReadOnly = true;
+            this.GoToOrder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GoToOrder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // MainForm
             // 
@@ -230,15 +236,15 @@ namespace E_Menu_PC_Server
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DGV);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Background_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Index";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Background_Panel.ResumeLayout(false);
+            this.Background_Panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,15 +253,15 @@ namespace E_Menu_PC_Server
 
         private Guna.UI2.WinForms.Guna2Elipse FormElipse;
         private Guna.UI2.WinForms.Guna2DataGridView DGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
-        private System.Windows.Forms.DataGridViewButtonColumn GoToOrder;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Background_Panel;
         private Guna.UI2.WinForms.Guna2Button Exit_Button;
         private Guna.UI2.WinForms.Guna2DragControl FormDrag;
         private System.Windows.Forms.Label NoOrder_Label;
         private Guna.UI2.WinForms.Guna2Button NewOrder_Button;
         private System.Windows.Forms.Timer VoidUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewButtonColumn GoToOrder;
     }
 }
 
