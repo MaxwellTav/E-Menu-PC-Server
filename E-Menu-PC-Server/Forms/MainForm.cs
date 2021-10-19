@@ -106,6 +106,19 @@ namespace E_Menu_PC_Server
             Forms.NewOrder newOrder = new Forms.NewOrder();
             newOrder.NOORDER = currenNoOrder;
             newOrder.ShowDialog();
+
+            if (newOrder.DialogResult == DialogResult.Yes)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+
+                row.CreateCells(DGV);
+
+                row.Cells[0].Value = currenNoOrder + 1;
+                row.Cells[1].Value = newOrder.CLIENTNAME;
+                row.Cells[2].Value = "Ver la orden";
+
+                DGV.Rows.Add(row);
+            }
         }
 
         /// <summary>

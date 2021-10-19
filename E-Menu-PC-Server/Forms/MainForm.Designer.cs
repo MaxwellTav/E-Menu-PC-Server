@@ -158,7 +158,7 @@ namespace E_Menu_PC_Server
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 54);
+            this.panel1.Size = new System.Drawing.Size(800, 61);
             this.panel1.TabIndex = 1;
             // 
             // NoOrder_Label
@@ -186,7 +186,7 @@ namespace E_Menu_PC_Server
             this.NewOrder_Button.ForeColor = System.Drawing.Color.White;
             this.NewOrder_Button.HoverState.Parent = this.NewOrder_Button;
             this.NewOrder_Button.Image = global::E_Menu_PC_Server.Properties.Resources.NewOrder;
-            this.NewOrder_Button.Location = new System.Drawing.Point(588, 3);
+            this.NewOrder_Button.Location = new System.Drawing.Point(588, 6);
             this.NewOrder_Button.Name = "NewOrder_Button";
             this.NewOrder_Button.ShadowDecoration.Parent = this.NewOrder_Button;
             this.NewOrder_Button.Size = new System.Drawing.Size(123, 48);
@@ -208,7 +208,7 @@ namespace E_Menu_PC_Server
             this.Exit_Button.ForeColor = System.Drawing.Color.White;
             this.Exit_Button.HoverState.Parent = this.Exit_Button;
             this.Exit_Button.Image = global::E_Menu_PC_Server.Properties.Resources.Exit;
-            this.Exit_Button.Location = new System.Drawing.Point(714, 3);
+            this.Exit_Button.Location = new System.Drawing.Point(714, 6);
             this.Exit_Button.Name = "Exit_Button";
             this.Exit_Button.ShadowDecoration.Parent = this.Exit_Button;
             this.Exit_Button.Size = new System.Drawing.Size(83, 48);

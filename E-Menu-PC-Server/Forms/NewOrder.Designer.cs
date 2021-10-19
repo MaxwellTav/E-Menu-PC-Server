@@ -30,15 +30,15 @@ namespace E_Menu_PC_Server.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Form_Elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Form_Drag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Background_Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Cuantity_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ItenName_Combo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,12 +47,15 @@ namespace E_Menu_PC_Server.Forms
             this.ItemPriceUnity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemPriceTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EliminarProduto = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.AddItem_Button = new Guna.UI2.WinForms.Guna2Button();
             this.MakeOrder_Button = new Guna.UI2.WinForms.Guna2Button();
             this.Exit_Button = new Guna.UI2.WinForms.Guna2Button();
             this.Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.ClientName_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NoOrder_Label = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PriceUnity_Textbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.MoneySign_Label = new System.Windows.Forms.Label();
             this.Background_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
@@ -73,12 +76,15 @@ namespace E_Menu_PC_Server.Forms
             this.Background_Panel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Background_Panel.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.Background_Panel.BorderThickness = 3;
+            this.Background_Panel.Controls.Add(this.MoneySign_Label);
+            this.Background_Panel.Controls.Add(this.label3);
+            this.Background_Panel.Controls.Add(this.PriceUnity_Textbox);
             this.Background_Panel.Controls.Add(this.label2);
-            this.Background_Panel.Controls.Add(this.guna2TextBox1);
-            this.Background_Panel.Controls.Add(this.comboBox1);
+            this.Background_Panel.Controls.Add(this.Cuantity_Textbox);
+            this.Background_Panel.Controls.Add(this.ItenName_Combo);
             this.Background_Panel.Controls.Add(this.label1);
             this.Background_Panel.Controls.Add(this.DGV);
-            this.Background_Panel.Controls.Add(this.guna2Button1);
+            this.Background_Panel.Controls.Add(this.AddItem_Button);
             this.Background_Panel.Controls.Add(this.MakeOrder_Button);
             this.Background_Panel.Controls.Add(this.Exit_Button);
             this.Background_Panel.Controls.Add(this.Separator1);
@@ -97,53 +103,53 @@ namespace E_Menu_PC_Server.Forms
             this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(355, 100);
+            this.label2.Location = new System.Drawing.Point(306, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 18);
+            this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 13;
             this.label2.Text = "Cantidad";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2TextBox1
+            // Cuantity_Textbox
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "1";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.SystemColors.Control;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(358, 116);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Cantidad";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.SelectionStart = 1;
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(129, 34);
-            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox1.TabIndex = 10;
+            this.Cuantity_Textbox.Animated = true;
+            this.Cuantity_Textbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Cuantity_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Cuantity_Textbox.DefaultText = "1";
+            this.Cuantity_Textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Cuantity_Textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Cuantity_Textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Cuantity_Textbox.DisabledState.Parent = this.Cuantity_Textbox;
+            this.Cuantity_Textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Cuantity_Textbox.FillColor = System.Drawing.SystemColors.Control;
+            this.Cuantity_Textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Cuantity_Textbox.FocusedState.Parent = this.Cuantity_Textbox;
+            this.Cuantity_Textbox.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cuantity_Textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Cuantity_Textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Cuantity_Textbox.HoverState.Parent = this.Cuantity_Textbox;
+            this.Cuantity_Textbox.Location = new System.Drawing.Point(309, 116);
+            this.Cuantity_Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Cuantity_Textbox.Name = "Cuantity_Textbox";
+            this.Cuantity_Textbox.PasswordChar = '\0';
+            this.Cuantity_Textbox.PlaceholderText = "Cantidad";
+            this.Cuantity_Textbox.SelectedText = "";
+            this.Cuantity_Textbox.SelectionStart = 1;
+            this.Cuantity_Textbox.ShadowDecoration.Parent = this.Cuantity_Textbox;
+            this.Cuantity_Textbox.Size = new System.Drawing.Size(86, 34);
+            this.Cuantity_Textbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.Cuantity_Textbox.TabIndex = 10;
             // 
-            // comboBox1
+            // ItenName_Combo
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(328, 34);
-            this.comboBox1.TabIndex = 9;
+            this.ItenName_Combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ItenName_Combo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ItenName_Combo.Font = new System.Drawing.Font("Ubuntu", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItenName_Combo.FormattingEnabled = true;
+            this.ItenName_Combo.Location = new System.Drawing.Point(10, 116);
+            this.ItenName_Combo.Name = "ItenName_Combo";
+            this.ItenName_Combo.Size = new System.Drawing.Size(292, 34);
+            this.ItenName_Combo.TabIndex = 9;
             // 
             // label1
             // 
@@ -153,7 +159,7 @@ namespace E_Menu_PC_Server.Forms
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(10, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 18);
+            this.label1.Size = new System.Drawing.Size(292, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nombre del artículo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -162,21 +168,21 @@ namespace E_Menu_PC_Server.Forms
             // 
             this.DGV.AllowUserToAddRows = false;
             this.DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV.BackgroundColor = System.Drawing.Color.White;
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemID,
             this.ItemName,
@@ -184,15 +190,14 @@ namespace E_Menu_PC_Server.Forms
             this.ItemPriceUnity,
             this.ItemPriceTotal,
             this.EliminarProduto});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DGV.Enabled = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGV.EnableHeadersVisualStyles = false;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.DGV.Location = new System.Drawing.Point(3, 156);
@@ -274,26 +279,27 @@ namespace E_Menu_PC_Server.Forms
             this.EliminarProduto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EliminarProduto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // guna2Button1
+            // AddItem_Button
             // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.BorderRadius = 24;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = global::E_Menu_PC_Server.Properties.Resources.NewOrder;
-            this.guna2Button1.Location = new System.Drawing.Point(494, 100);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(211, 50);
-            this.guna2Button1.TabIndex = 8;
-            this.guna2Button1.Text = "Agregar artículo";
+            this.AddItem_Button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.AddItem_Button.Animated = true;
+            this.AddItem_Button.AutoRoundedCorners = true;
+            this.AddItem_Button.BorderRadius = 24;
+            this.AddItem_Button.CheckedState.Parent = this.AddItem_Button;
+            this.AddItem_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddItem_Button.CustomImages.Parent = this.AddItem_Button;
+            this.AddItem_Button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.AddItem_Button.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddItem_Button.ForeColor = System.Drawing.Color.White;
+            this.AddItem_Button.HoverState.Parent = this.AddItem_Button;
+            this.AddItem_Button.Image = global::E_Menu_PC_Server.Properties.Resources.NewOrder;
+            this.AddItem_Button.Location = new System.Drawing.Point(494, 100);
+            this.AddItem_Button.Name = "AddItem_Button";
+            this.AddItem_Button.ShadowDecoration.Parent = this.AddItem_Button;
+            this.AddItem_Button.Size = new System.Drawing.Size(211, 50);
+            this.AddItem_Button.TabIndex = 8;
+            this.AddItem_Button.Text = "Agregar artículo";
+            this.AddItem_Button.Click += new System.EventHandler(this.AddItem_Button_Click);
             // 
             // MakeOrder_Button
             // 
@@ -316,6 +322,7 @@ namespace E_Menu_PC_Server.Forms
             this.MakeOrder_Button.Size = new System.Drawing.Size(700, 42);
             this.MakeOrder_Button.TabIndex = 8;
             this.MakeOrder_Button.Text = "Crear esta orden";
+            this.MakeOrder_Button.Click += new System.EventHandler(this.MakeOrder_Button_Click);
             // 
             // Exit_Button
             // 
@@ -390,6 +397,62 @@ namespace E_Menu_PC_Server.Forms
             this.NoOrder_Label.Text = "Orden #99";
             this.NoOrder_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Enabled = false;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(398, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 18);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Precio (U)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PriceUnity_Textbox
+            // 
+            this.PriceUnity_Textbox.Animated = true;
+            this.PriceUnity_Textbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PriceUnity_Textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PriceUnity_Textbox.DefaultText = "100";
+            this.PriceUnity_Textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.PriceUnity_Textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.PriceUnity_Textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PriceUnity_Textbox.DisabledState.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PriceUnity_Textbox.Enabled = false;
+            this.PriceUnity_Textbox.FillColor = System.Drawing.SystemColors.Control;
+            this.PriceUnity_Textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PriceUnity_Textbox.FocusedState.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceUnity_Textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PriceUnity_Textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PriceUnity_Textbox.HoverState.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.Location = new System.Drawing.Point(401, 116);
+            this.PriceUnity_Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PriceUnity_Textbox.Name = "PriceUnity_Textbox";
+            this.PriceUnity_Textbox.PasswordChar = '\0';
+            this.PriceUnity_Textbox.PlaceholderText = "Precio unidad";
+            this.PriceUnity_Textbox.SelectedText = "";
+            this.PriceUnity_Textbox.ShadowDecoration.Parent = this.PriceUnity_Textbox;
+            this.PriceUnity_Textbox.Size = new System.Drawing.Size(86, 34);
+            this.PriceUnity_Textbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.PriceUnity_Textbox.TabIndex = 14;
+            // 
+            // MoneySign_Label
+            // 
+            this.MoneySign_Label.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MoneySign_Label.Enabled = false;
+            this.MoneySign_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoneySign_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MoneySign_Label.Location = new System.Drawing.Point(400, 122);
+            this.MoneySign_Label.Name = "MoneySign_Label";
+            this.MoneySign_Label.Size = new System.Drawing.Size(11, 19);
+            this.MoneySign_Label.TabIndex = 16;
+            this.MoneySign_Label.Text = "$";
+            this.MoneySign_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,7 +463,6 @@ namespace E_Menu_PC_Server.Forms
             this.Name = "NewOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewOrder";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.NewOrder_Load);
             this.Background_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
@@ -418,11 +480,11 @@ namespace E_Menu_PC_Server.Forms
         private Guna.UI2.WinForms.Guna2Separator Separator1;
         private Guna.UI2.WinForms.Guna2Button Exit_Button;
         private Guna.UI2.WinForms.Guna2Button MakeOrder_Button;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private Guna.UI2.WinForms.Guna2TextBox Cuantity_Textbox;
+        private System.Windows.Forms.ComboBox ItenName_Combo;
         private Guna.UI2.WinForms.Guna2DataGridView DGV;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button AddItem_Button;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
@@ -430,5 +492,8 @@ namespace E_Menu_PC_Server.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPriceUnity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPriceTotal;
         private System.Windows.Forms.DataGridViewButtonColumn EliminarProduto;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox PriceUnity_Textbox;
+        private System.Windows.Forms.Label MoneySign_Label;
     }
 }
