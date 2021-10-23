@@ -30,13 +30,12 @@ namespace E_Menu_PC_Server.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BackgroundPanel = new System.Windows.Forms.Panel();
             this.Cancel_Button = new Guna.UI2.WinForms.Guna2Button();
             this.DGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemCuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemPriceUnity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@ namespace E_Menu_PC_Server.Forms
             this.Invoice_Button = new Guna.UI2.WinForms.Guna2Button();
             this.FormDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.FormElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.CancelOrder_Button = new Guna.UI2.WinForms.Guna2Button();
             this.BackgroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,7 @@ namespace E_Menu_PC_Server.Forms
             // BackgroundPanel
             // 
             this.BackgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BackgroundPanel.Controls.Add(this.CancelOrder_Button);
             this.BackgroundPanel.Controls.Add(this.Cancel_Button);
             this.BackgroundPanel.Controls.Add(this.DGV);
             this.BackgroundPanel.Controls.Add(this.ClientName_Label);
@@ -76,7 +77,7 @@ namespace E_Menu_PC_Server.Forms
             this.Cancel_Button.Location = new System.Drawing.Point(0, 281);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.ShadowDecoration.Parent = this.Cancel_Button;
-            this.Cancel_Button.Size = new System.Drawing.Size(199, 67);
+            this.Cancel_Button.Size = new System.Drawing.Size(203, 67);
             this.Cancel_Button.TabIndex = 7;
             this.Cancel_Button.Text = "Volver";
             this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
@@ -85,35 +86,34 @@ namespace E_Menu_PC_Server.Forms
             // 
             this.DGV.AllowUserToAddRows = false;
             this.DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV.BackgroundColor = System.Drawing.Color.White;
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ItemID,
             this.ItemName,
             this.ItemCuantity,
             this.ItemPriceUnity,
             this.ItemPriceTotal});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGV.Enabled = false;
             this.DGV.EnableHeadersVisualStyles = false;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
@@ -149,13 +149,6 @@ namespace E_Menu_PC_Server.Forms
             this.DGV.ThemeStyle.RowsStyle.Height = 22;
             this.DGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
             this.DGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // ItemID
-            // 
-            this.ItemID.FillWeight = 50.76142F;
-            this.ItemID.HeaderText = "ID";
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
             // 
             // ItemName
             // 
@@ -217,10 +210,10 @@ namespace E_Menu_PC_Server.Forms
             this.Invoice_Button.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Invoice_Button.ForeColor = System.Drawing.Color.White;
             this.Invoice_Button.HoverState.Parent = this.Invoice_Button;
-            this.Invoice_Button.Location = new System.Drawing.Point(203, 281);
+            this.Invoice_Button.Location = new System.Drawing.Point(334, 281);
             this.Invoice_Button.Name = "Invoice_Button";
             this.Invoice_Button.ShadowDecoration.Parent = this.Invoice_Button;
-            this.Invoice_Button.Size = new System.Drawing.Size(514, 67);
+            this.Invoice_Button.Size = new System.Drawing.Size(383, 67);
             this.Invoice_Button.TabIndex = 6;
             this.Invoice_Button.Text = "Finalizar pedido";
             this.Invoice_Button.Click += new System.EventHandler(this.Invoice_Button_Click);
@@ -232,6 +225,24 @@ namespace E_Menu_PC_Server.Forms
             // FormElipse
             // 
             this.FormElipse.TargetControl = this;
+            // 
+            // CancelOrder_Button
+            // 
+            this.CancelOrder_Button.Animated = true;
+            this.CancelOrder_Button.CheckedState.Parent = this.CancelOrder_Button;
+            this.CancelOrder_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelOrder_Button.CustomImages.Parent = this.CancelOrder_Button;
+            this.CancelOrder_Button.FillColor = System.Drawing.Color.Brown;
+            this.CancelOrder_Button.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelOrder_Button.ForeColor = System.Drawing.Color.White;
+            this.CancelOrder_Button.HoverState.Parent = this.CancelOrder_Button;
+            this.CancelOrder_Button.Location = new System.Drawing.Point(209, 281);
+            this.CancelOrder_Button.Name = "CancelOrder_Button";
+            this.CancelOrder_Button.ShadowDecoration.Parent = this.CancelOrder_Button;
+            this.CancelOrder_Button.Size = new System.Drawing.Size(119, 67);
+            this.CancelOrder_Button.TabIndex = 8;
+            this.CancelOrder_Button.Text = "Cancelar pedido";
+            this.CancelOrder_Button.Click += new System.EventHandler(this.CancelOrder_Button_Click);
             // 
             // OrderViewForm
             // 
@@ -260,12 +271,12 @@ namespace E_Menu_PC_Server.Forms
         private System.Windows.Forms.Label NoOrder_Label;
         private Guna.UI2.WinForms.Guna2DragControl FormDrag;
         private Guna.UI2.WinForms.Guna2Elipse FormElipse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private Guna.UI2.WinForms.Guna2Button Invoice_Button;
+        private Guna.UI2.WinForms.Guna2Button Cancel_Button;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemCuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPriceUnity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPriceTotal;
-        private Guna.UI2.WinForms.Guna2Button Invoice_Button;
-        private Guna.UI2.WinForms.Guna2Button Cancel_Button;
+        private Guna.UI2.WinForms.Guna2Button CancelOrder_Button;
     }
 }

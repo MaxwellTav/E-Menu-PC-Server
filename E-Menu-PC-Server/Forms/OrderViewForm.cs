@@ -1,4 +1,6 @@
-﻿using System;
+﻿using E_Menu_PC_Server.Classes;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace E_Menu_PC_Server.Forms
@@ -15,16 +17,20 @@ namespace E_Menu_PC_Server.Forms
         string clientname = "";
         string[] StaticProductName =
             {"Pan con huevo",
-            "Jugo de limón", 
+            "Jugo de limón",
             "Tostada",
-            "Yaroa", 
-            "Masita", 
-            "Jugo de uva", 
-            "100% natural", 
-            "Café", 
+            "Yaroa",
+            "Masita",
+            "Jugo de uva",
+            "100% natural",
+            "Café",
             "Bebida energética"};
+        List<OutputRead> outputReads = new List<OutputRead>();
+        List<OutputItemReads> outputItemReads = new List<OutputItemReads>();
 
         Random RNG = new Random();
+        GeneralScript generalScript = new GeneralScript();
+        DataClass dataClass = new DataClass();
         #endregion
 
         #region Get Sets
@@ -38,32 +44,51 @@ namespace E_Menu_PC_Server.Forms
             NoOrder_Label.Text = "Orden #" + NOORDER;
 
             #region Datos estáticos.
-            for (int i = 0; i < RNG.Next(1, 5); i++)
+            if (generalScript.STATICDATA)
             {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(DGV);
+                for (int i = 0; i < RNG.Next(1, 5); i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(DGV);
 
-                //ID
-                row.Cells[0].Value = i.ToString();
+                    //Nombre del artículo
+                    row.Cells[0].Value = StaticProductName[RNG.Next(0, StaticProductName.Length)];
 
-                //Nombre del artículo
-                row.Cells[1].Value = StaticProductName[RNG.Next(0, StaticProductName.Length)];
+                    //Cantidad
+                    int Cuatity = RNG.Next(1, 10);
+                    row.Cells[1].Value = Cuatity;
 
-                //Cantidad
-                int Cuatity = RNG.Next(1, 10);
-                row.Cells[2].Value = Cuatity;
+                    //Precio (unitario)
+                    Double UnitPrice = RNG.Next(50, 500);
+                    row.Cells[2].Value = UnitPrice;
 
-                //Precio (unitario)
-                Double UnitPrice = RNG.Next(50, 500);
-                row.Cells[3].Value = UnitPrice;
+                    //Precio (total)
+                    row.Cells[3].Value = (Cuatity * UnitPrice).ToString();
 
-                //Precio (total)
-                row.Cells[4].Value = (Cuatity * UnitPrice).ToString();
-
-                //Agregando toda la info
-                DGV.Rows.Add(row);
+                    //Agregando toda la info
+                    DGV.Rows.Add(row);
+                }
             }
+            #endregion
 
+            #region Datos normales.
+            else
+            {
+                outputItemReads = dataClass.OutputListItem("Select * From ItemTable Where ClientName = '" + CLIENTNAME + "'", ReadSelection.ItemTable);
+
+                for (int i = 0; i < outputItemReads.Count; i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(DGV);
+
+                    row.Cells[0].Value = outputItemReads[i].ITEMNAME;
+                    row.Cells[1].Value = outputItemReads[i].ITEMCUANTITY;
+                    row.Cells[2].Value = outputItemReads[i].ITEMPRICE;
+                    row.Cells[3].Value = outputItemReads[i].ITEMPRICETOTAL;
+
+                    DGV.Rows.Add(row);
+                }
+            }
             #endregion
         }
 
@@ -81,6 +106,20 @@ namespace E_Menu_PC_Server.Forms
             DialogResult = DialogResult.OK;
             MessageBox.Show("¡Compra realizada con éxito!", "¡Todo bien!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
+        }
+
+        /// <summary>
+        /// Botón el cual cancela y elimina el pedido del programa y la base de datos.
+        /// </summary>
+        private void CancelOrder_Button_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro que desea eliminar este pedido de la bandeja de espera?", "¡ESTÁ ELIMINANDO UNA ORDEN!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button3);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
     }
 }

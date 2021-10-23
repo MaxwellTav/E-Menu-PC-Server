@@ -30,22 +30,27 @@ namespace E_Menu_PC_Server
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormElipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.DGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Background_Panel = new System.Windows.Forms.Panel();
-            this.NoOrder_Label = new System.Windows.Forms.Label();
-            this.NewOrder_Button = new Guna.UI2.WinForms.Guna2Button();
-            this.Exit_Button = new Guna.UI2.WinForms.Guna2Button();
-            this.FormDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.VoidUpdate = new System.Windows.Forms.Timer(this.components);
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GoToOrder = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Background_Panel = new System.Windows.Forms.Panel();
+            this.NoOrder_Label = new System.Windows.Forms.Label();
+            this.FormDrag = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.VoidUpdate = new System.Windows.Forms.Timer(this.components);
+            this.Waiting_Picture = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.NewOrder_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Exit_Button = new Guna.UI2.WinForms.Guna2Button();
+            this.Witing_Panel = new System.Windows.Forms.Panel();
+            this.Waiting_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.Background_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Waiting_Picture)).BeginInit();
+            this.Witing_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormElipse
@@ -58,8 +63,8 @@ namespace E_Menu_PC_Server
             this.DGV.AllowUserToDeleteRows = false;
             this.DGV.AllowUserToResizeColumns = false;
             this.DGV.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
             this.DGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -68,14 +73,14 @@ namespace E_Menu_PC_Server
             this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.DGV.ColumnHeadersHeight = 50;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -83,14 +88,14 @@ namespace E_Menu_PC_Server
             this.ClientName,
             this.GoToOrder});
             this.DGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(133)))), ((int)(((byte)(147)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle30;
             this.DGV.EnableHeadersVisualStyles = false;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(199)))), ((int)(((byte)(206)))));
             this.DGV.Location = new System.Drawing.Point(1, 60);
@@ -130,6 +135,32 @@ namespace E_Menu_PC_Server
             this.DGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DGV_RowsAdded);
             this.DGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DGV_RowsRemoved);
             // 
+            // ItemID
+            // 
+            this.ItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemID.FillWeight = 500F;
+            this.ItemID.HeaderText = "No. Orden";
+            this.ItemID.Name = "ItemID";
+            this.ItemID.ReadOnly = true;
+            // 
+            // ClientName
+            // 
+            this.ClientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClientName.FillWeight = 500F;
+            this.ClientName.HeaderText = "Nombre del cliente";
+            this.ClientName.Name = "ClientName";
+            this.ClientName.ReadOnly = true;
+            // 
+            // GoToOrder
+            // 
+            this.GoToOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GoToOrder.FillWeight = 500F;
+            this.GoToOrder.HeaderText = "Ver la orden";
+            this.GoToOrder.Name = "GoToOrder";
+            this.GoToOrder.ReadOnly = true;
+            this.GoToOrder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GoToOrder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Background_Panel
             // 
             this.Background_Panel.Controls.Add(this.NoOrder_Label);
@@ -145,12 +176,34 @@ namespace E_Menu_PC_Server
             // 
             this.NoOrder_Label.AutoSize = true;
             this.NoOrder_Label.Enabled = false;
-            this.NoOrder_Label.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoOrder_Label.Location = new System.Drawing.Point(3, 11);
+            this.NoOrder_Label.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.NoOrder_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.NoOrder_Label.Location = new System.Drawing.Point(12, 9);
             this.NoOrder_Label.Name = "NoOrder_Label";
-            this.NoOrder_Label.Size = new System.Drawing.Size(190, 32);
+            this.NoOrder_Label.Size = new System.Drawing.Size(169, 37);
             this.NoOrder_Label.TabIndex = 5;
-            this.NoOrder_Label.Text = "En espera: 99";
+            this.NoOrder_Label.Text = "En espera: 0";
+            // 
+            // FormDrag
+            // 
+            this.FormDrag.TargetControl = this.Background_Panel;
+            // 
+            // VoidUpdate
+            // 
+            this.VoidUpdate.Interval = 10000;
+            // 
+            // Waiting_Picture
+            // 
+            this.Waiting_Picture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Waiting_Picture.BackColor = System.Drawing.Color.White;
+            this.Waiting_Picture.Image = global::E_Menu_PC_Server.Properties.Resources.WaitingGif1;
+            this.Waiting_Picture.Location = new System.Drawing.Point(11, 7);
+            this.Waiting_Picture.Name = "Waiting_Picture";
+            this.Waiting_Picture.ShadowDecoration.Parent = this.Waiting_Picture;
+            this.Waiting_Picture.Size = new System.Drawing.Size(319, 191);
+            this.Waiting_Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Waiting_Picture.TabIndex = 2;
+            this.Waiting_Picture.TabStop = false;
             // 
             // NewOrder_Button
             // 
@@ -196,45 +249,35 @@ namespace E_Menu_PC_Server
             this.Exit_Button.Text = "Salir";
             this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
             // 
-            // FormDrag
+            // Witing_Panel
             // 
-            this.FormDrag.TargetControl = this.Background_Panel;
+            this.Witing_Panel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Witing_Panel.BackColor = System.Drawing.Color.White;
+            this.Witing_Panel.Controls.Add(this.Waiting_Label);
+            this.Witing_Panel.Controls.Add(this.Waiting_Picture);
+            this.Witing_Panel.Location = new System.Drawing.Point(218, 110);
+            this.Witing_Panel.Name = "Witing_Panel";
+            this.Witing_Panel.Size = new System.Drawing.Size(338, 232);
+            this.Witing_Panel.TabIndex = 3;
             // 
-            // VoidUpdate
+            // Waiting_Label
             // 
-            this.VoidUpdate.Interval = 10000;
-            // 
-            // ItemID
-            // 
-            this.ItemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ItemID.FillWeight = 500F;
-            this.ItemID.HeaderText = "No. Orden";
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
-            // 
-            // ClientName
-            // 
-            this.ClientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ClientName.FillWeight = 500F;
-            this.ClientName.HeaderText = "Nombre del cliente";
-            this.ClientName.Name = "ClientName";
-            this.ClientName.ReadOnly = true;
-            // 
-            // GoToOrder
-            // 
-            this.GoToOrder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GoToOrder.FillWeight = 500F;
-            this.GoToOrder.HeaderText = "Ver la orden";
-            this.GoToOrder.Name = "GoToOrder";
-            this.GoToOrder.ReadOnly = true;
-            this.GoToOrder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.GoToOrder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Waiting_Label.AutoSize = true;
+            this.Waiting_Label.Enabled = false;
+            this.Waiting_Label.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Waiting_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.Waiting_Label.Location = new System.Drawing.Point(28, 195);
+            this.Waiting_Label.Name = "Waiting_Label";
+            this.Waiting_Label.Size = new System.Drawing.Size(282, 37);
+            this.Waiting_Label.TabIndex = 6;
+            this.Waiting_Label.Text = "Esperando ordenes...";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Witing_Panel);
             this.Controls.Add(this.DGV);
             this.Controls.Add(this.Background_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -245,6 +288,9 @@ namespace E_Menu_PC_Server
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.Background_Panel.ResumeLayout(false);
             this.Background_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Waiting_Picture)).EndInit();
+            this.Witing_Panel.ResumeLayout(false);
+            this.Witing_Panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,6 +308,9 @@ namespace E_Menu_PC_Server
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
         private System.Windows.Forms.DataGridViewButtonColumn GoToOrder;
+        private Guna.UI2.WinForms.Guna2PictureBox Waiting_Picture;
+        private System.Windows.Forms.Panel Witing_Panel;
+        private System.Windows.Forms.Label Waiting_Label;
     }
 }
 

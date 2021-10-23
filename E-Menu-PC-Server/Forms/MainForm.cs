@@ -1,4 +1,8 @@
-﻿using System;
+﻿using E_Menu_PC_Server.Classes;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -20,7 +24,15 @@ namespace E_Menu_PC_Server
             currenNoOrder = 0;
 
         Random RNG = new Random();
-        Classes.GeneralScript GeneralScript = new Classes.GeneralScript();
+        GeneralScript GeneralScript = new GeneralScript();
+        DataClass DataClass = new DataClass();
+
+        List<OutputRead> outputReadsList = new List<OutputRead>();
+        List<OutputItemReads> outputItemReadsList = new List<OutputItemReads>();
+        List<OutputClientOrder> outputClientReadsList = new List<OutputClientOrder>();
+
+        IFirebaseConfig IFC = new FirebaseConfig();
+        IFirebaseClient Client;
         #endregion
 
         /// <summary>
@@ -52,7 +64,43 @@ namespace E_Menu_PC_Server
                     //Poniendo la data en el DGV
                     DGV.Rows.Add(row);
                 }
+                return;
             }
+            #endregion
+
+            #region Datos NO estáticos.
+            outputReadsList = DataClass.OutputList("Select * From ConfigTable", ReadSelection.ConfigTable);
+            for (int i = 0; i < outputReadsList.Count; i++)
+            {
+                switch (outputReadsList[i].CONFIG)
+                {
+                    case "AuthSecret":
+                        Properties.Settings.Default.AuthSecret = outputReadsList[i].VALUE;
+                        break;
+
+                    case "BasePath":
+                        Properties.Settings.Default.BasePath = outputReadsList[i].VALUE;
+                        break;
+                }
+            }
+            Properties.Settings.Default.Save();
+
+            #region Rellenar el DGV con datos guardados
+            outputClientReadsList = DataClass.OutputListClient("Select * From OrderTable", ReadSelection.OrderTable);
+
+            for (int i = 0; i < outputClientReadsList.Count; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(DGV);
+
+                row.Cells[0].Value = (i + 1);
+                row.Cells[1].Value = outputClientReadsList[i].CLIENTNAME;
+                row.Cells[2].Value = "Ver la orden";
+
+                DGV.Rows.Add(row);
+            }
+            #endregion
+
             #endregion
         }
 
@@ -69,7 +117,6 @@ namespace E_Menu_PC_Server
                 currentNoOrderToDelete = int.Parse(DGV.Rows[e.RowIndex].Cells[0].Value.ToString());
                 currentClientName = DGV.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                //MessageBox.Show(DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                 Forms.OrderViewForm orderViewForm = new Forms.OrderViewForm();
                 orderViewForm.NOORDER = currentNoOrderToDelete;
                 orderViewForm.CLIENTNAME = currentClientName;
@@ -82,9 +129,14 @@ namespace E_Menu_PC_Server
 
                     for (int i = 0; i < DGV.RowCount; i++)
                         DGV.Rows[i].Cells[0].Value = "" + (i + 1);
+
+                    #region Eliminar los artículos
+                    DataClass.DeleteFrom("Delete From ItemTable Where ClientName = '" + currentClientName + "'");
+                    DataClass.DeleteFrom("Delete From OrderTable Where ClientName = '" + currentClientName + "'");
+                    #endregion
                 }
             }
-            catch (Exception error) { /*MessageBox.Show("Ocurrió un error grave en el sistema\n" + error.Message, "¿Qué pasó aquí? | Error: " + error.HResult,MessageBoxButtons.OK, MessageBoxIcon.Error);*/ }
+            catch { /*MessageBox.Show("Ocurrió un error grave en el sistema\n" + error.Message, "¿Qué pasó aquí? | Error: " + error.HResult,MessageBoxButtons.OK, MessageBoxIcon.Error);*/ }
         }
 
         #region Event update data
@@ -98,6 +150,17 @@ namespace E_Menu_PC_Server
         {
             currenNoOrder = int.Parse(DGV.RowCount.ToString());
             NoOrder_Label.Text = "En espera: " + currenNoOrder;
+        
+            if (currenNoOrder < 1)
+            {
+                Witing_Panel.Enabled = true;
+                Witing_Panel.Visible = true;
+            }
+            else
+            {
+                Witing_Panel.Enabled = false;
+                Witing_Panel.Visible = false;
+            }
         }
         #endregion
 
@@ -112,6 +175,7 @@ namespace E_Menu_PC_Server
 
             if (newOrder.DialogResult == DialogResult.Yes)
             {
+                #region Crear artículo en DataGridView
                 DataGridViewRow row = new DataGridViewRow();
 
                 row.CreateCells(DGV);
@@ -121,6 +185,7 @@ namespace E_Menu_PC_Server
                 row.Cells[2].Value = "Ver la orden";
 
                 DGV.Rows.Add(row);
+                #endregion
             }
         }
 

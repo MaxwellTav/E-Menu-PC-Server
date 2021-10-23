@@ -44,7 +44,6 @@ namespace E_Menu_PC_Server.Forms
             this.ItenName_Combo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemCuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemPriceUnity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,7 +102,7 @@ namespace E_Menu_PC_Server.Forms
             this.MoneySign_Label.Enabled = false;
             this.MoneySign_Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MoneySign_Label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.MoneySign_Label.Location = new System.Drawing.Point(400, 122);
+            this.MoneySign_Label.Location = new System.Drawing.Point(403, 122);
             this.MoneySign_Label.Name = "MoneySign_Label";
             this.MoneySign_Label.Size = new System.Drawing.Size(11, 19);
             this.MoneySign_Label.TabIndex = 16;
@@ -142,7 +141,7 @@ namespace E_Menu_PC_Server.Forms
             this.PriceUnity_Textbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PriceUnity_Textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PriceUnity_Textbox.HoverState.Parent = this.PriceUnity_Textbox;
-            this.PriceUnity_Textbox.Location = new System.Drawing.Point(401, 116);
+            this.PriceUnity_Textbox.Location = new System.Drawing.Point(416, 116);
             this.PriceUnity_Textbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PriceUnity_Textbox.Name = "PriceUnity_Textbox";
             this.PriceUnity_Textbox.PasswordChar = '\0';
@@ -150,7 +149,7 @@ namespace E_Menu_PC_Server.Forms
             this.PriceUnity_Textbox.SelectedText = "";
             this.PriceUnity_Textbox.SelectionStart = 3;
             this.PriceUnity_Textbox.ShadowDecoration.Parent = this.PriceUnity_Textbox;
-            this.PriceUnity_Textbox.Size = new System.Drawing.Size(86, 34);
+            this.PriceUnity_Textbox.Size = new System.Drawing.Size(62, 34);
             this.PriceUnity_Textbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.PriceUnity_Textbox.TabIndex = 14;
             // 
@@ -241,7 +240,6 @@ namespace E_Menu_PC_Server.Forms
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ItemID,
             this.ItemName,
             this.ItemCuantity,
             this.ItemPriceUnity,
@@ -292,13 +290,6 @@ namespace E_Menu_PC_Server.Forms
             this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
             this.DGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.EventoAnadido);
             this.DGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.EventoEliminar);
-            // 
-            // ItemID
-            // 
-            this.ItemID.FillWeight = 29.00668F;
-            this.ItemID.HeaderText = "ID";
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
             // 
             // ItemName
             // 
@@ -362,7 +353,6 @@ namespace E_Menu_PC_Server.Forms
             // MakeOrder_Button
             // 
             this.MakeOrder_Button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.MakeOrder_Button.Animated = true;
             this.MakeOrder_Button.AutoRoundedCorners = true;
             this.MakeOrder_Button.BorderRadius = 20;
             this.MakeOrder_Button.CheckedState.Parent = this.MakeOrder_Button;
@@ -488,14 +478,13 @@ namespace E_Menu_PC_Server.Forms
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button AddItem_Button;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox PriceUnity_Textbox;
+        private System.Windows.Forms.Label MoneySign_Label;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemCuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPriceUnity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPriceTotal;
         private System.Windows.Forms.DataGridViewButtonColumn EliminarProduto;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox PriceUnity_Textbox;
-        private System.Windows.Forms.Label MoneySign_Label;
     }
 }

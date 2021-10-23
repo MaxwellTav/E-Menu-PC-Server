@@ -79,5 +79,15 @@ namespace E_Menu_PC_Server.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WaitingGif1 {
+            get {
+                object obj = ResourceManager.GetObject("WaitingGif1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
